@@ -1,14 +1,11 @@
 export const themeLight = {
     colors: {
-      btnBgClr: "rgb(208,93,26)",
+      btnBgClr: "rgb(100,93,26)",
       btnClr: "rgb(255,255,255)",
       titleClr: "rgb(255,255,255)",
-      bgClr: "rgb(80,100,200)",
+      bgClr: "rgb(200,100,200)",
       Clr: "rgb(255,255,255)",
     },
-    fonts: {
-      font : "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"
-    }
   };
   export const themeDark = {
     colors: {
@@ -19,7 +16,4 @@ export const themeLight = {
       bgClr: "rgb(60,60,60)",
       Clr: "rgb(255,255,255)",
     },
-    fonts: {
-      font : "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"
-    }
   };

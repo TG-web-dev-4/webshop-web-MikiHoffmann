@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledMainTitle>We sell words for every occasion...</StyledMainTitle>
+      <StyledMainTitle>We sell the universe...</StyledMainTitle>
       <NavBar />
     </StyledHeader>
   );

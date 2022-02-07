@@ -1,0 +1,22 @@
+{
+    "products": [
+      {
+        "prId": "p01",
+        "prName": "product Small",
+        "prImg": "ImageBlanco.png",
+        "prDescription": "This is the SMALL product"
+      },
+      {
+        "prId": "p02",
+        "prName": "product Medium",
+        "prImg": "ImageBlanco.png",
+        "prDescription": "This is the MEDIUM product"
+      },
+      {
+        "prId": "p03",
+        "prName": "product Large",
+        "prImg": "ImageBlanco.png",
+        "prDescription": "This is the LARGE product"
+      }
+    ]
+  }

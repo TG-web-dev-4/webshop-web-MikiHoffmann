@@ -1,8 +1,10 @@
+import { StyledFootersection } from "../styles/styledComponents/Footersection.styled"
+
 const Footer = () => {
     return (
-        <div>
+        <StyledFootersection>
             this is the footer
-        </div>
+        </StyledFootersection>
     )
 }
 

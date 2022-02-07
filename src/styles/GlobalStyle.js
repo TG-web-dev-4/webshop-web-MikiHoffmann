@@ -13,7 +13,7 @@ html {
 body {
     background-color: ${({theme}) => theme.colors.bgClr};
     color: ${({theme}) => theme.colors.Clr};
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.1em;
 }
 a {
