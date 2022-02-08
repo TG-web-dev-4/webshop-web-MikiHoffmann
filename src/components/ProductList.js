@@ -1,13 +1,14 @@
-import ProductListitem from "./ProductListitem";
+import { StyledProductList } from "../styles/styledComponents/ProductList.styled";
+import ProductListItem from "./ProductListItem";
 
 const ProductList = ({ allProducts }) => {
   //console.log(allProducts)
   const renderProductList = () => {
     return allProducts.map((product) => (
-      <ProductListitem key={product.prId} product={product} />
+      <ProductListItem key={product.id} product={product} />
     ));
   };
-  return <ul>{renderProductList()}</ul>;
+  return <StyledProductList>{renderProductList()}</StyledProductList>;
 };
 
 export default ProductList;

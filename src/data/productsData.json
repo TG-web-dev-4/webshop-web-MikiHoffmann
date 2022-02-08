@@ -1,22 +1,46 @@
 {
     "products": [
       {
-        "prId": "p01",
-        "prName": "product Small",
-        "prImg": "ImageBlanco.png",
-        "prDescription": "This is the SMALL product"
+        "id": "p01",
+        "name": "product Small",
+        "img": "ImageBlanco.png",
+        "description": "This is the SMALL product",
+        "price": 10
       },
       {
-        "prId": "p02",
-        "prName": "product Medium",
-        "prImg": "ImageBlanco.png",
-        "prDescription": "This is the MEDIUM product"
+        "id": "p02",
+        "name": "product Medium",
+        "img": "ImageBlanco.png",
+        "description": "This is the MEDIUM product",
+        "price": 11
       },
       {
-        "prId": "p03",
-        "prName": "product Large",
-        "prImg": "ImageBlanco.png",
-        "prDescription": "This is the LARGE product"
+        "id": "p03",
+        "name": "product Large",
+        "img": "ImageBlanco.png",
+        "description": "This is the LARGE product",
+        "price": 12
+      },
+      {
+        "id": "p04",
+        "name": "product X-Large",
+        "img": "ImageBlanco.png",
+        "description": "This is the X-LARGE product",
+        "price": 13
+      },
+      {
+        "id": "p05",
+        "name": "product XX-Large",
+        "img": "ImageBlanco.png",
+        "description": "This is the XX-LARGE product",
+        "price": 14
+      },
+      {
+        "id": "p06",
+        "name": "product Weird",
+        "img": "ImageBlanco.png",
+        "description": "This is the WEIRD product",
+        "price": 15
       }
     ]
   }

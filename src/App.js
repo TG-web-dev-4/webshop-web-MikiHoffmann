@@ -20,6 +20,7 @@ function App() {
 
   const dispatch = useDispatch();
   const allProducts = useSelector((state) => state.products);
+  const cartItems = useSelector((state) => state.cartItems);
   useEffect(() => {
     dispatch(setProducts(productsData.products));
   }, [dispatch, productsData]);
@@ -28,7 +29,7 @@ function App() {
     <ThemeProvider theme={themeLight}>
       <GlobalStyle />
       <Router>
-        <Header />
+        <Header cartItems={cartItems}/>
         <Routes>
           <Route path="/" element={<HomePage allProducts={allProducts} />} />
           <Route
@@ -36,7 +37,7 @@ function App() {
             element={<ProductPage allProducts={allProducts} />}
           />
           <Route path="/details" element={<ProductDetailPage />} />
-          <Route path="/cart" element={<ShoppingCartPage />} />
+          <Route path="/cart" element={<ShoppingCartPage cartItems={cartItems}/>} />
         </Routes>
         <Footer />
       </Router>

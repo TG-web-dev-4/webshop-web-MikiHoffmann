@@ -10,6 +10,9 @@ margin: 1em 0;
 .itemTitle {
     grid-area: 1/1/2/11;
 }
+.itemPrice {
+    grid-area: 1/9/2/11;
+}
 img {
     grid-area: 2/1/3/11;
     box-shadow: 2px 2px 4px rgb(0,0,0);

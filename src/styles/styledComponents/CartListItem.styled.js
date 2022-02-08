@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const StyledProductListitem = styled.li`
+export const StyledCartListItem = styled.li`
 display: grid;
-grid-template-rows: 1fr 1fr 1fr;
+grid-template-rows: repeat(3, auto);
 grid-template-columns: repeat(10, 1fr);
 grid-gap: .5em;
 width: 100%;
@@ -20,8 +20,20 @@ img {
 .itemDescription {
     grid-area: 2/4/4/11
 }
-button {
-    grid-area: 3/10/4/11;
+.decreaseButton {
+    grid-area: 3/5/4/6;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+.increaseButton {
+    grid-area: 3/6/4/7;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+.deleteButton {
+    grid-area: 3/8/4/9;
     cursor: pointer;
 }
 `
