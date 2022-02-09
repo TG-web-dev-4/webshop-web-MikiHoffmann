@@ -9,19 +9,18 @@ export const cartReducer = (state = initialState.cartItems, action) => {
       // const cartItem = state.products.find(
       //   (product) => product.id === action.payload.id
       // );
-      // const inCart = state.find((cartItem) =>
-      //   cartItem.id === action.payload.id ? true : false
-      // );
+       const inCart = state.find((cartItem) =>
+         cartItem.id === action.payload.id ? true : false
+       );
       return [
-        ...state, {cartItem}
-        
-        // cartItems: inCart
-        //   ? state.cartItems.map((cartItem) =>
-        //       cartItem.id === action.payload.id
-        //         ? { ...cartItem, qty: cartItem.qty + 1 }
-        //         : cartItem
-        //     )
-        //   : [...state.cartItems, { ...cartItem, qty: 1 }],
+        ...state,
+        //  inCart
+        //    ? state.map(() => 
+        //        cartItem.id === action.payload.id
+        //          ? {qty: cartItem.qty + 1 }
+        //          : {cartItem}
+        //      )
+            {...cartItem, qty: 1 },
       ];
     case actions.removeFromCart:
       return {
