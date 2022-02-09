@@ -3,7 +3,7 @@ export const themeLight = {
       btnBgClr: "rgb(100,93,26)",
       btnClr: "rgb(255,255,255)",
       titleClr: "rgb(255,255,255)",
-      bgClr: "rgb(200,100,200)",
+      bgClr: "rgb(200,200,200)",
       Clr: "rgb(255,255,255)",
     },
   };

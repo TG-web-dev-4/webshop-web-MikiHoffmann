@@ -5,22 +5,20 @@ export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case actions.addToCart:
       console.log("state:", initialState);
-      //const cartItem = action.payload;
-       const cartItem = initialState.products.find(
-         (product) => product.id === action.payload.id
-       );
-       const inCart = initialState.cartItems.find((cartItem) =>
-         cartItem.id === action.payload.id ? true : false
-       );
-       console.log("cartItem:",cartItem)
-       console.log("inCart:", inCart)
-      return {
-        
-      };
+      const cartItem = initialState.products.find(
+        (product) => product.id === action.payload.id
+      );
+      // const inCart = state.cartItems.find((cartItem) =>
+      //   cartItem.id === action.payload.id ? true : false
+      // );
+      console.log("cartItem:", cartItem);
+      //console.log("inCart:", inCart);
+      return [...state, { ...cartItem, qty: 1 }];
     case actions.removeFromCart:
+      console.log("cartRem:", state.cartItems)
       return {
         ...state,
-        cartItems: state.cartItems.filter(
+        cartItems: state.filter(
           (cartItem) => cartItem.id !== action.payload.id
         ),
       };

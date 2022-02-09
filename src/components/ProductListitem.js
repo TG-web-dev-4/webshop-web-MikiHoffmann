@@ -7,19 +7,27 @@ const ProductListitem = ({ product, addToCart }) => {
   return (
     <StyledProductListitem>
       <img src={`../images/productImg/${product.img}`} alt="blanco" />
-      <span className="itemTitle"><h3>{product.name}</h3></span>
+      <span className="itemTitle">
+        <h3>{product.name}</h3>
+      </span>
       <span className="itemPrice">&euro;{product.price}</span>
       <span className="itemDescription">{product.description}</span>
-    <StyledLinkButton onClick={() => {addToCart(product.id)}}>link</StyledLinkButton>
+      <StyledLinkButton
+        className="addButton"
+        onClick={() => {
+          addToCart(product.id);
+        }}
+      >
+        add to my shoppingcart
+      </StyledLinkButton>
     </StyledProductListitem>
   );
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (id) => dispatch(addToCart(id))
-  }
-}
+    addToCart: (id) => dispatch(addToCart(id)),
+  };
+};
 
-
-export default connect(null,mapDispatchToProps)(ProductListitem);
+export default connect(null, mapDispatchToProps)(ProductListitem);

@@ -3,6 +3,7 @@ import { StyledArticle } from "../styles/styledComponents/Article.styled";
 import CartList from "../components/CartList";
 
 const ShoppingCartPage = ({ cartItems }) => {
+  console.log("cartItems:",cartItems)
   return (
     <StyledMain>
       <StyledArticle>
