@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { StyledNavBar } from "../styles/styledComponents/NavBar.styled";
 
 const NavBar = ({ cartItems }) => {
-  console.log(cartItems);
+  //console.log("cart:", cartItems);
   const [showCounter, setShowCounter] = useState(false);
   useEffect(() => {
     if(cartItems.length > 0) {

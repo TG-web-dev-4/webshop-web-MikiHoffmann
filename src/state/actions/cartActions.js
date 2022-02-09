@@ -1,14 +1,11 @@
-import * as actions from "./actionTypes/cartActions";
+import * as actions from "./actionTypes";
 
 export const addToCart = (cartItemID) => {
-  return (dispatch) => {
-    dispatch({
-      type: actions.addToCart,
-      payload: {
-        id: cartItemID,
-      },
-    })
-    
+  return {
+    type: actions.addToCart,
+    payload: {
+      id: cartItemID,
+    },
   };
 };
 

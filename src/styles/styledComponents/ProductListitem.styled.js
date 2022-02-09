@@ -7,6 +7,8 @@ grid-template-columns: repeat(10, 1fr);
 grid-gap: .5em;
 width: 100%;
 margin-top: .5em;
+padding: .2em;
+box-shadow: 2px 2px 4px rgb(0,0,0);
 img {
     grid-area: 1/1/4/4;
     box-shadow: 2px 2px 4px rgb(0,0,0);
