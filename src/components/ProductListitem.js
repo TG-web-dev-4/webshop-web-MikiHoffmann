@@ -1,16 +1,18 @@
-import { StyledProductListitem } from "../styles/styledComponents/ProductListitem.styled";
-import { StyledLinkButton } from "../styles/styledComponents/LinkButton.styled";
-import { addToCart } from "../state/actions/cartActions";
 import { connect } from "react-redux";
 
-const ProductListitem = ({ product, addToCart }) => {
+import { StyledProductListItem } from "../styles/styledComponents/ProductListItem.styled";
+import { StyledLinkButton } from "../styles/styledComponents/LinkButton.styled";
+import { addToCart } from "../state/actions/shopActions";
+
+const ProductListItem = ({ product, addToCart }) => {
   return (
-    <StyledProductListitem>
+    <StyledProductListItem>
       <img src={`../images/productImg/${product.img}`} alt="blanco" />
       <span className="itemTitle">
         <h3>{product.name}</h3>
       </span>
-      <span className="itemPrice">&euro;{product.price}</span>
+      <StyledLinkButton>view product</StyledLinkButton>
+      <span className="itemPrice">{product.price} money</span>
       <span className="itemDescription">{product.description}</span>
       <StyledLinkButton
         className="addButton"
@@ -20,7 +22,7 @@ const ProductListitem = ({ product, addToCart }) => {
       >
         add to my shoppingcart
       </StyledLinkButton>
-    </StyledProductListitem>
+    </StyledProductListItem>
   );
 };
 
@@ -30,4 +32,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(ProductListitem);
+export default connect(null, mapDispatchToProps)(ProductListItem);

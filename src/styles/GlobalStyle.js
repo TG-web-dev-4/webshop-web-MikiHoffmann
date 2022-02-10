@@ -11,14 +11,17 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    background-color: ${({theme}) => theme.colors.bgClr};
-    color: ${({theme}) => theme.colors.Clr};
+    height: 100%;
+    width: 100%;
+    background-color: ${({ theme }) => theme.colors.bgClr};
+    color: ${({ theme }) => theme.colors.Clr};
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.1em;
+    overflow-x: hidden;
 }
 a {
     text-decoration: none;
-    color: ${({theme}) => theme.colors.Clr}
+    color: ${({ theme }) => theme.colors.Clr};
 }
 img {
     height: auto;
@@ -27,6 +30,6 @@ img {
 li {
     list-style-type: none;
 }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

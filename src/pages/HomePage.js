@@ -2,7 +2,7 @@ import { StyledMain } from "../styles/styledComponents/Main.styled";
 import { StyledArticle } from "../styles/styledComponents/Article.styled";
 import ProductCard from "../components/ProductCard";
 
-const HomePage = ({ allProducts }) => {
+const HomePage = () => {
   //console.log(allProducts[0]);
   return (
     <StyledMain>
@@ -13,7 +13,7 @@ const HomePage = ({ allProducts }) => {
             welcome to the best way to get your own universe...
           </p>
         </div>
-        <ProductCard  allProducts={allProducts} />
+        <ProductCard />
       </StyledArticle>
     </StyledMain>
   );

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const StyledProductListitem = styled.li`
-display: grid;
+export const StyledProductListItem = styled.li`
+  display: grid;
 grid-template-rows: auto repeat(4, 1fr);
 grid-template-columns: repeat(10, 1fr);
 grid-gap: .5em;
@@ -28,4 +28,4 @@ img {
     height: 2em;
     cursor: pointer;
 }
-`
+`;

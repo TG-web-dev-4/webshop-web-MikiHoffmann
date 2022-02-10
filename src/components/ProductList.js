@@ -1,10 +1,10 @@
 import { StyledProductList } from "../styles/styledComponents/ProductList.styled";
 import ProductListItem from "./ProductListItem";
 
-const ProductList = ({ allProducts }) => {
+const ProductList = ({ products }) => {
   //console.log(allProducts)
   const renderProductList = () => {
-    return allProducts.map((product) => (
+    return products.map((product) => (
       <ProductListItem key={product.id} product={product} />
     ));
   };

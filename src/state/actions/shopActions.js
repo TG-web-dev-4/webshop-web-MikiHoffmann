@@ -28,9 +28,9 @@ export const adjustQuantity = (cartItemID, value) => {
   };
 };
 
-export const displayCartItems = (cartItem) => {
+export const displayCurrentItem = (cartItem) => {
   return {
-    type: actions.displayCartItems,
+    type: actions.displayCurrentItem,
     payload: cartItem,
   };
 };

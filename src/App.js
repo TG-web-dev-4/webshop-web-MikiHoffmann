@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { useSelector } from "react-redux";
 
 import GlobalStyle from "./styles/GlobalStyle";
 import { themeLight } from "./styles/Themes";
@@ -14,22 +13,23 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 
 function App() {
-  const allProducts = useSelector((state) => state.products);
-  const cartItems = useSelector((state) => state.cartItems);
-  
+
   return (
     <ThemeProvider theme={themeLight}>
       <GlobalStyle />
       <Router>
-        <Header cartItems={cartItems}/>
+        <Header />
         <Routes>
-          <Route path="/" element={<HomePage allProducts={allProducts} />} />
+          <Route path="/" element={<HomePage />} />
           <Route
             path="/products"
-            element={<ProductPage allProducts={allProducts} />}
+            element={<ProductPage />}
           />
           <Route path="/details" element={<ProductDetailPage />} />
-          <Route path="/cart" element={<ShoppingCartPage cartItems={cartItems} />} />
+          <Route
+            path="/cart"
+            element={<ShoppingCartPage />}
+          />
         </Routes>
         <Footer />
       </Router>

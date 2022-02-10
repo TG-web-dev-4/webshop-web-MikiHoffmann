@@ -1,8 +1,11 @@
+import { useSelector } from "react-redux";
+
 import { StyledProductList } from "../styles/styledComponents/ProductList.styled";
 import CartListItem from "./CartListItem";
 
-const CartItemList = ({ cartItems }) => {
-  //console.log("cartItems",cartItems);
+const CartItemList = () => {
+  const cartItems = useSelector((state) => state.shop.cartItems);
+  console.log("cartItems",cartItems);
   const displayCartItems = () => {
     if (cartItems.length === 0) return <div>Your shopping cart is empty</div>;
     return cartItems.map((cartItem) => {
