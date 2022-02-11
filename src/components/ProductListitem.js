@@ -11,7 +11,9 @@ const ProductListItem = ({ product, addToCart }) => {
       <span className="itemTitle">
         <h3>{product.name}</h3>
       </span>
-      <StyledLinkButton className="detailsButton">view details</StyledLinkButton>
+      <StyledLinkButton className="detailsButton">
+        view details
+      </StyledLinkButton>
       <span className="itemPrice">{product.price} money</span>
       <StyledLinkButton
         className="addButton"

@@ -5,13 +5,13 @@ export const StyledHeader = styled.header`
   top: 0;
   width: 100%;
   display: grid;
-  grid-template-rows: repeat(4, 2em);
+  grid-template-rows: repeat(3, 2em);
   grid-template-columns: repeat(10, 1fr);
   background-color: ${({ theme }) => theme.colors.bgClr};
-  background-image: url('../images/nebula.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url("../images/nebula.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   box-shadow: 2px 2px 4px rgb(0, 0, 0);
   z-index: 1200;
   img {
@@ -23,6 +23,7 @@ export const StyledHeader = styled.header`
     grid-area: 3/1/4/11;
   }
   nav {
-    grid-area: 4/1/5/11;
+    grid-area: 1/3/3/11;
+    align-self: flex-end;
   }
 `;

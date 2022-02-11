@@ -7,7 +7,10 @@ const ProductCard = ({ products }) => {
         <h3>{products[0].name}</h3>
       </span>
       <span className="itemPrice">{products[0].price} money</span>
-      <img src={`../images/productImg/${products[0].img}`} alt={products[0].name} />
+      <img
+        src={`../images/productImg/${products[0].img}`}
+        alt={products[0].name}
+      />
       <span className="itemDescription">{products[0].description}</span>
       <StyledLinkButton>link</StyledLinkButton>
     </StyledProductCard>

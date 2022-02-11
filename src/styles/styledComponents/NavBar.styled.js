@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const StyledNavBar = styled.nav`
+  height: 2em;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   margin: 0.5em 0;
-  .cartLink {
+  .pageLink {
     position: relative;
     height: 1.5em;
     img {
