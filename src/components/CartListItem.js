@@ -16,13 +16,16 @@ const CartListItem = ({ cartItem, adjustQuantity, removeFromCart }) => {
   const options = [1, 2, 3, 4, 5];
   return (
     <StyledCartListItem>
-      <span>{cartItem.name}</span>
-      <span> times:{inputQty}</span>
-      <img src={`../images/productImg/${cartItem.img}`} alt="blanco" />
+      <span className="itemTitle">{cartItem.name}</span>
+      <span className="qtyDisplay"> times:{inputQty}</span>
+      <img src={`../images/productImg/${cartItem.img}`} alt={cartItem.name} />
+      <span className="adjustSelector">adjust amount: 
       <Selector
         selectorOptions={options}
         onChangeHandler={onChangeHandler}
       />
+      </span>
+      
       <StyledLinkButton
         className="deleteButton"
         onClick={() => {

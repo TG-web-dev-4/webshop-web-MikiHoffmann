@@ -7,13 +7,12 @@ import { addToCart } from "../state/actions/shopActions";
 const ProductListItem = ({ product, addToCart }) => {
   return (
     <StyledProductListItem>
-      <img src={`../images/productImg/${product.img}`} alt="blanco" />
+      <img src={`../images/productImg/${product.img}`} alt={product.name} />
       <span className="itemTitle">
         <h3>{product.name}</h3>
       </span>
-      <StyledLinkButton>view product</StyledLinkButton>
+      <StyledLinkButton className="detailsButton">view details</StyledLinkButton>
       <span className="itemPrice">{product.price} money</span>
-      <span className="itemDescription">{product.description}</span>
       <StyledLinkButton
         className="addButton"
         onClick={() => {

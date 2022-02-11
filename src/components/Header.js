@@ -5,8 +5,8 @@ import NavBar from "./NavBar";
 const Header = ({cartItems}) => {
   return (
     <StyledHeader>
-      <img src="images/ImageBlancoSquare.png" alt="blanco" />
-      <StyledMainTitle>We sell the universe...</StyledMainTitle>
+      <img src="images/spaceWalkersLogo.png" alt="blanco" />
+      <StyledMainTitle className="mainTitle">We are spaceWalkers! We sell the universe...</StyledMainTitle>
       <NavBar cartItems={cartItems}/>
     </StyledHeader>
   );

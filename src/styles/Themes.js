@@ -3,8 +3,8 @@ export const themeLight = {
     btnBgClr: "rgb(100,93,26)",
     btnClr: "rgb(255,255,255)",
     titleClr: "rgb(255,255,255)",
-    bgClr: "rgb(20,200,100)",
-    Clr: "rgb(2,55,55)",
+    bgClr: "rgb(255,255,255)",
+    Clr: "rgb(255,255,255)",
   },
 };
 export const themeDark = {

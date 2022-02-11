@@ -2,17 +2,19 @@ import styled from "styled-components";
 
 export const StyledCartListItem = styled.li`
   display: grid;
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(3, 2em);
   grid-template-columns: repeat(10, 1fr);
   grid-gap: 0.5em;
   width: 100%;
-  margin-top: 0.5em;
+  margin-top: 1em;
+  border-top: 2px solid green;
   img {
-    grid-area: 1/1/4/4;
+    grid-area: 1/1/4/5;
+    height: 100%;
     box-shadow: 2px 2px 4px rgb(0, 0, 0);
   }
   .itemTitle {
-    grid-area: 1/4/4/11;
+    grid-area: 1/5/2/11;
   }
   .itemPrice {
     grid-area: 1/10/2/11;
@@ -32,8 +34,11 @@ export const StyledCartListItem = styled.li`
     color: white;
     cursor: pointer;
   }
+  .adjustSelector {
+    grid-area: 3/5/4/10;
+  }
   .deleteButton {
-    grid-area: 3/8/4/9;
+    grid-area: 3/10/4/11;
     cursor: pointer;
   }
 `;
