@@ -10,7 +10,10 @@ const NavBar = ({cartItems}) => {
      if(cartItems.length > 0) {
        setShowCounter(true);
      }
-   },[cartItems,showCounter])
+     if(cartItems.length === 0) {
+       setShowCounter(false)
+     }
+   },[cartItems])
   return (
     <StyledNavBar>
       <Link to="/">Home</Link>

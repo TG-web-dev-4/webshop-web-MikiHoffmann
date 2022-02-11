@@ -1,6 +1,6 @@
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-
 import GlobalStyle from "./styles/GlobalStyle";
 import { themeLight } from "./styles/Themes";
 
@@ -21,15 +21,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route
-            path="/products"
-            element={<ProductPage />}
-          />
+          <Route path="/products" element={<ProductPage />} />
           <Route path="/details" element={<ProductDetailPage />} />
-          <Route
-            path="/cart"
-            element={<ShoppingCartPage />}
-          />
+          <Route path="/cart" element={<ShoppingCartPage />} />
         </Routes>
         <Footer />
       </Router>
