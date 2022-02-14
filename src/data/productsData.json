@@ -1,6 +1,70 @@
 {
     "products": [
       {
+        "id": "pPl01",
+        "name": "Mercury",
+        "img": "planetsMercury.png",
+        "description": "This is the SMALL planet",
+        "price": 400.00,
+        "category":"planets"
+      },
+      {
+        "id": "pPl02",
+        "name": "Venus",
+        "img": "planetsVenus.jpg",
+        "description": "This is the SMALL planet",
+        "price": 400.00,
+        "category":"planets"
+      },
+      {
+        "id": "pPl03",
+        "name": "Earth",
+        "img": "planetsEarth.jpg",
+        "description": "This is the SMALL planet",
+        "price": 400.00,
+        "category":"planets"
+      },
+      {
+        "id": "pPl04",
+        "name": "Saturn",
+        "img": "planetsSaturn.jpg",
+        "description": "This is the BIG planet",
+        "price": 400.00,
+        "category":"planets"
+      },
+      {
+        "id": "pPl05",
+        "name": "Jupiter",
+        "img": "planetsJupiter.jpg",
+        "description": "This is the very BIG planet",
+        "price": 400.00,
+        "category":"planets"
+      },
+      {
+        "id": "pPl06",
+        "name": "Uranus",
+        "img": "planetsUranus.jpg",
+        "description": "This is the SMALL planet",
+        "price": 400.00,
+        "category":"planets"
+      },
+      {
+        "id": "pPl07",
+        "name": "Neptune",
+        "img": "planetsNeptune.jpg",
+        "description": "This is the SMALL planet",
+        "price": 400.00,
+        "category":"planets"
+      },
+      {
+        "id": "pPl08",
+        "name": "Pluto",
+        "img": "planetsPluto.jpg",
+        "description": "This is the SMALL planet",
+        "price": 400.00,
+        "category":"planets"
+      },
+      {
         "id": "pR01",
         "name": "Pink Space Robot",
         "img": "PinkSpaceToys.jpg",
