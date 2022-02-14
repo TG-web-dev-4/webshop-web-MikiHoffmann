@@ -5,11 +5,7 @@ import { StyledNavBar } from "../styles/styledComponents/NavBar.styled";
 
 const NavBar = ({ cartItems }) => {
   //console.log("cart:", cartItems);
-  let allCartItems;
-  for(let i = 0; i < cartItems.length; i++) {
-    allCartItems = cartItems.length * cartItems[i].qty;
-    console.log(allCartItems)
-  }
+  
   const [showCounter, setShowCounter] = useState(false);
   useEffect(() => {
     if (cartItems.length > 0) {

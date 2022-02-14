@@ -1,13 +1,14 @@
 import { connect } from "react-redux";
 import { useState } from "react";
 import { StyledCartListItem } from "../styles/styledComponents/CartListItem.styled";
-import { StyledLinkButton } from "../styles/styledComponents/LinkButton.styled";
 import { adjustQuantity, removeFromCart } from "../state/actions/shopActions";
 
 import Selector from "../components/Selector";
 
 const CartListItem = ({ cartItem, adjustQuantity, removeFromCart }) => {
   const [inputQty, setInputQty] = useState(cartItem.qty);
+  const itemTotalPrice = cartItem.price * inputQty;
+  console.log(itemTotalPrice)
   const onChangeHandler = (e) => {
     console.log(e.target.value);
     setInputQty(e.target.value);
@@ -23,15 +24,14 @@ const CartListItem = ({ cartItem, adjustQuantity, removeFromCart }) => {
         adjust amount:
         <Selector selectorOptions={options} onChangeHandler={onChangeHandler} />
       </span>
-
-      <StyledLinkButton
+      <img
+        src="../images/iconDelete.png"
+        alt="delete icon"
         className="deleteButton"
         onClick={() => {
           removeFromCart(cartItem.id);
         }}
-      >
-        del
-      </StyledLinkButton>
+      />
     </StyledCartListItem>
   );
 };

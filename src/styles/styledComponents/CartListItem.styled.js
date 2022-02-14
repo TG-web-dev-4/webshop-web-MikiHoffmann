@@ -38,7 +38,12 @@ export const StyledCartListItem = styled.li`
     grid-area: 3/5/4/10;
   }
   .deleteButton {
-    grid-area: 3/10/4/11;
+    grid-area: 3/9/4/11;
+    border-radius: 50%;
+    border: 1px solid white;
     cursor: pointer;
+    &:hover {
+      background-color: red;
+    }
   }
 `;

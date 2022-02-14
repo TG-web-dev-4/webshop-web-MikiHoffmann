@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 
-import { StyledProductList } from "../styles/styledComponents/ProductList.styled";
 import CartListItem from "./CartListItem";
 
 const CartItemList = () => {
@@ -15,7 +14,7 @@ const CartItemList = () => {
   return (
     <>
       <div>cart items</div>
-      <StyledProductList>{displayCartItems()}</StyledProductList>
+      {displayCartItems()}
     </>
   );
 };

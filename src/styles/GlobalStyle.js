@@ -22,6 +22,13 @@ body {
     font-size: 1.1em;
     overflow-x: hidden;
 }
+.backGround {
+    position: fixed;
+    top: 6em;
+    height: 100%;
+    width: 100%;
+    
+}
 a {
     text-decoration: none;
     color: ${({ theme }) => theme.colors.Clr};
