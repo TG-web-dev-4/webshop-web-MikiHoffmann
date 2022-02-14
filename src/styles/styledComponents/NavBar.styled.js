@@ -10,6 +10,7 @@ export const StyledNavBar = styled.nav`
   .pageLink {
     position: relative;
     height: 1.5em;
+    
     img {
       height: 100%;
       margin: 0;
@@ -31,4 +32,16 @@ export const StyledNavBar = styled.nav`
       }
     }
   }
+  .linkWord {
+      display: none;
+      @media only screen and (min-width: 31.25em) {
+        display: inline-block;
+      }
+    }
+    .linkIcon {
+      display: block;
+      @media only screen and (min-width: 31.25em) {
+        display: none;
+      }
+    }
 `;

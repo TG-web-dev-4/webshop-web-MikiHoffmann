@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
+import SignInPage from "./pages/SignInPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/products" element={<ProductPage />} />
             <Route path="/details" element={<ProductDetailPage />} />
+            <Route path="/signIn" element={<SignInPage/>} />
             <Route path="/cart" element={<ShoppingCartPage />} />
           </Routes>
           <Footer />
