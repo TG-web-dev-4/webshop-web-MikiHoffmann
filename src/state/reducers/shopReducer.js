@@ -31,12 +31,21 @@ export const shopReducer = (state = initialState, action) => {
           (cartItem) => cartItem.id !== action.payload.id
         ),
       };
-    case actions.adjustQuantity:
+    case actions.decreaseQuantity:
       return {
         ...state,
         cartItem: state.cartItems.map((cartItem) =>
           cartItem.id === action.payload.id
-            ? { ...cartItem, qty: action.payload.qty }
+            ? { ...cartItem, qty: action.payload.qty -1  }
+            : cartItem
+        ),
+      };
+      case actions.increaseQuantity:
+      return {
+        ...state,
+        cartItem: state.cartItems.map((cartItem) =>
+          cartItem.id === action.payload.id
+            ? { ...cartItem, qty: action.payload.qty +1 }
             : cartItem
         ),
       };

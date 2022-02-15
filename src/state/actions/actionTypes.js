@@ -1,4 +1,5 @@
 export const addToCart = "addToCart";
 export const removeFromCart = "removeFromCart";
-export const adjustQuantity = "adjustQuantity";
+export const decreaseQuantity = "decreaseQuantity";
+export const increaseQuantity = "increaseQuantity";
 export const displayCurrentItem = "displayCurrentItem";

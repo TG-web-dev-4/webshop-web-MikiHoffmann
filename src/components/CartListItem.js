@@ -1,28 +1,38 @@
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { useState } from "react";
 import { StyledCartListItem } from "../styles/styledComponents/CartListItem.styled";
-import { adjustQuantity, removeFromCart } from "../state/actions/shopActions";
+import { StyledLinkButton } from "../styles/styledComponents/LinkButton.styled";
+import { decreaseQuantity, increaseQuantity, removeFromCart } from "../state/actions/shopActions";
 
-import Selector from "../components/Selector";
-
-const CartListItem = ({ cartItem, adjustQuantity, removeFromCart }) => {
+const CartListItem = ({ cartItem, decreaseQuantity, increaseQuantity, removeFromCart }) => {
   const [inputQty, setInputQty] = useState(cartItem.qty);
+const inputQty2 = useSelector((state) => state.shop.cartItems)
   const itemTotalPrice = cartItem.price * inputQty;
-  console.log(itemTotalPrice)
-  const onChangeHandler = (e) => {
-    console.log(e.target.value);
-    setInputQty(e.target.value);
-    adjustQuantity(cartItem.id, e.target.value);
+  console.log("input1",inputQty);
+  console.log("input2",inputQty2);
+  const onDecrease = () => {
+    setInputQty(inputQty - 1);
+    decreaseQuantity(cartItem.id, inputQty);
+    if (inputQty <= 1) {
+      removeFromCart(cartItem.id);
+    }
   };
-  const options = [1, 2, 3, 4, 5];
+  const onIncrease = () => {
+    setInputQty(inputQty + 1);
+    increaseQuantity(cartItem.id, inputQty);
+  };
   return (
     <StyledCartListItem>
-      <span className="itemTitle">{cartItem.name}</span>
+      <span className="itemTitle">
+        {cartItem.name}
+        {itemTotalPrice}
+      </span>
       <span className="qtyDisplay"> times:{inputQty}</span>
       <img src={`../images/productImg/${cartItem.img}`} alt={cartItem.name} />
       <span className="adjustSelector">
         adjust amount:
-        <Selector selectorOptions={options} onChangeHandler={onChangeHandler} />
+        <StyledLinkButton onClick={onDecrease}>-</StyledLinkButton>
+        <StyledLinkButton onClick={onIncrease}>+</StyledLinkButton>
       </span>
       <img
         src="../images/iconDelete.png"
@@ -38,7 +48,8 @@ const CartListItem = ({ cartItem, adjustQuantity, removeFromCart }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    adjustQuantity: (id, value) => dispatch(adjustQuantity(id, value)),
+    decreaseQuantity: (id, value) => dispatch(decreaseQuantity(id, value)),
+    increaseQuantity: (id, value) => dispatch(increaseQuantity(id, value)),
     removeFromCart: (id) => dispatch(removeFromCart(id)),
   };
 };

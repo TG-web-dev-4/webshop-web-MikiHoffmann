@@ -18,9 +18,18 @@ export const removeFromCart = (cartItemID) => {
   };
 };
 
-export const adjustQuantity = (cartItemID, value) => {
+export const decreaseQuantity = (cartItemID, value) => {
   return {
-    type: actions.adjustQuantity,
+    type: actions.decreaseQuantity,
+    payload: {
+      id: cartItemID,
+      qty: value,
+    },
+  };
+};
+export const increaseQuantity = (cartItemID, value) => {
+  return {
+    type: actions.increaseQuantity,
     payload: {
       id: cartItemID,
       qty: value,
