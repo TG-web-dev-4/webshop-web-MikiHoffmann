@@ -14,14 +14,15 @@ export const StyledProductListItem = styled.li`
   }
   .itemImgContainer {
     grid-area: 2/1/10/11;
-    height: auto;
+    aspect-ratio: 8/5;
     width: 100%;
+    border: .1em solid rgb(0,0,0);
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
     overflow: hidden;
   }
   .itemImg {
     height: auto;
     width: 100%;
-    box-shadow: 2px 2px 4px rgb(0, 0, 0);
   }
   .itemPrice {
     grid-area: 2/7/3/11;

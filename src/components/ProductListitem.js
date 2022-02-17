@@ -8,7 +8,7 @@ const ProductListItem = ({ product, addToCart }) => {
   return (
     <StyledProductListItem>
       <span className="itemTitle">
-        <h3>{product.name}</h3>
+        <h4>{product.name}</h4>
       </span>
       <div className="itemImgContainer">
       <img className="itemImg" src={`../images/productImg/${product.img}`} alt={product.name} />
