@@ -13,21 +13,58 @@ body {
     height: 100%;
     width: 100%;
     background-color: ${({ theme }) => theme.colors.bgClr};
-    background-image: url('../images/nebula.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
+    
     color: ${({ theme }) => theme.colors.Clr};
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.1em;
+    font-size: 1em;
     overflow-x: hidden;
 }
-.backGround {
-    position: fixed;
-    top: 6em;
+.root {
     height: 100%;
-    width: 100%;
-    
+}
+.backgroundImg {
+    background-image: url('../images/nebulaPortrait.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    animation-name: zoomInOut;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@media only screen and (orientation: landscape) {
+    .backgroundImg {
+        background-image: url('../images/nebula.jpg');
+    }
+}
+@media only screen and (min-width: 35em) and (orientation: landscape) {
+    .backgroundImg {
+    background-image: url('../images/nebula.jpg');
+    background-size: 100%;
+    }
+    @keyframes zoomInOut {
+    0% {
+        background-size: 100%;
+    }
+    50% {
+        background-size: 275%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+}
+@keyframes zoomInOut {
+    0% {
+        background-size: 150%;
+    }
+    50% {
+        background-size: 275%;
+    }
+    100% {
+        background-size: 150%;
+    }
 }
 a {
     text-decoration: none;

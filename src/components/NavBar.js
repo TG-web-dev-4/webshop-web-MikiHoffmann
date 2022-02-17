@@ -16,7 +16,7 @@ const NavBar = ({ cartItems }) => {
     }
   }, [cartItems]);
   return (
-    <StyledNavBar>
+    <StyledNavBar className="backgroundImg">
       <Link to="/" className="pageLink">
         <span className="linkWord">home</span>
         <img
@@ -29,7 +29,7 @@ const NavBar = ({ cartItems }) => {
         <span className="linkWord">products</span>
         <img
           className="linkIcon"
-          src="../images/iconSearch.png"
+          src="../images/iconMenu.png"
           alt="search icon"
         />
       </Link>

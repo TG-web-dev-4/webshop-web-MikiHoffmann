@@ -2,14 +2,23 @@ import { connect, useSelector } from "react-redux";
 import { useState } from "react";
 import { StyledCartListItem } from "../styles/styledComponents/CartListItem.styled";
 import { StyledLinkButton } from "../styles/styledComponents/LinkButton.styled";
-import { decreaseQuantity, increaseQuantity, removeFromCart } from "../state/actions/shopActions";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from "../state/actions/shopActions";
 
-const CartListItem = ({ cartItem, decreaseQuantity, increaseQuantity, removeFromCart }) => {
+const CartListItem = ({
+  cartItem,
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+}) => {
   const [inputQty, setInputQty] = useState(cartItem.qty);
-const inputQty2 = useSelector((state) => state.shop.cartItems)
+  const inputQty2 = useSelector((state) => state.shop.cartItems);
   const itemTotalPrice = cartItem.price * inputQty;
-  console.log("input1",inputQty);
-  console.log("input2",inputQty2);
+  console.log("input1", inputQty);
+  console.log("input2", inputQty2);
   const onDecrease = () => {
     setInputQty(inputQty - 1);
     decreaseQuantity(cartItem.id, inputQty);
@@ -48,8 +57,8 @@ const inputQty2 = useSelector((state) => state.shop.cartItems)
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    decreaseQuantity: (id, value) => dispatch(decreaseQuantity(id, value)),
-    increaseQuantity: (id, value) => dispatch(increaseQuantity(id, value)),
+    decreaseQuantity: (id, qty) => dispatch(decreaseQuantity(id, qty)),
+    increaseQuantity: (id, qty) => dispatch(increaseQuantity(id, qty)),
     removeFromCart: (id) => dispatch(removeFromCart(id)),
   };
 };

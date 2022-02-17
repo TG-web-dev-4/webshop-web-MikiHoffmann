@@ -2,7 +2,7 @@ import { StyledFootersection } from "../styles/styledComponents/Footersection.st
 
 const Footer = () => {
   return (
-    <StyledFootersection>
+    <StyledFootersection className="backgroundImg">
       <p>this is the footer</p>
       <p>all images are from printerest</p>
     </StyledFootersection>

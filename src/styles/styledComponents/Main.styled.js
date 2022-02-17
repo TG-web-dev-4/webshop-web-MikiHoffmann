@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMain = styled.main`
+  height: auto;
   width: 100%;
-  margin-top: 6em;
-  
+  padding-top: 8em;
 `;

@@ -1,15 +1,14 @@
 import { StyledHeader } from "../styles/styledComponents/Header.styled";
 import { StyledMainTitle } from "../styles/styledComponents/MainTitle.styled";
-import NavBar from "./NavBar";
 
-const Header = ({ cartItems }) => {
+const Header = () => {
   return (
-    <StyledHeader>
+    <StyledHeader className="backgroundImg">
       <img src="images/spaceWalkersLogo.png" alt="blanco" />
       <StyledMainTitle className="mainTitle">
-        We are spaceWalkers! We sell the universe...
+        <span><h2>We are spaceWalkers!</h2></span>
+        <span>We sell the universe...</span>
       </StyledMainTitle>
-      <NavBar cartItems={cartItems} />
     </StyledHeader>
   );
 };

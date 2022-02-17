@@ -1,9 +1,7 @@
-import { StyledMain } from "../styles/styledComponents/Main.styled";
 import { StyledArticle } from "../styles/styledComponents/Article.styled";
 
 const ProductDetailPage = () => {
   return (
-    <StyledMain>
       <StyledArticle>
         <h2>product detail</h2>
         <p>
@@ -15,7 +13,6 @@ const ProductDetailPage = () => {
           accusamus doloremque ad autem exercitationem quibusdam, magnam velit!
         </p>
       </StyledArticle>
-    </StyledMain>
   );
 };
 

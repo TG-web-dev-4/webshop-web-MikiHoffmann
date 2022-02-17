@@ -11,7 +11,7 @@
       {
         "id": "pPl02",
         "name": "Venus",
-        "img": "planetsVenus.jpg",
+        "img": "planetsVenus.png",
         "description": "This is the SMALL planet",
         "price": 400.00,
         "category":"planets"
@@ -19,7 +19,7 @@
       {
         "id": "pPl03",
         "name": "Earth",
-        "img": "planetsEarth.jpg",
+        "img": "planetsEarth.png",
         "description": "This is the SMALL planet",
         "price": 400.00,
         "category":"planets"
@@ -27,39 +27,47 @@
       {
         "id": "pPl04",
         "name": "Saturn",
-        "img": "planetsSaturn.jpg",
+        "img": "planetsSaturn.png",
         "description": "This is the BIG planet",
         "price": 400.00,
         "category":"planets"
       },
       {
         "id": "pPl05",
-        "name": "Jupiter",
-        "img": "planetsJupiter.jpg",
+        "name": "Mars",
+        "img": "planetsMars.png",
         "description": "This is the very BIG planet",
         "price": 400.00,
         "category":"planets"
       },
       {
         "id": "pPl06",
-        "name": "Uranus",
-        "img": "planetsUranus.jpg",
-        "description": "This is the SMALL planet",
+        "name": "Jupiter",
+        "img": "planetsJupiter.png",
+        "description": "This is the very BIG planet",
         "price": 400.00,
         "category":"planets"
       },
       {
         "id": "pPl07",
-        "name": "Neptune",
-        "img": "planetsNeptune.jpg",
+        "name": "Uranus",
+        "img": "planetsUranus.png",
         "description": "This is the SMALL planet",
         "price": 400.00,
         "category":"planets"
       },
       {
         "id": "pPl08",
+        "name": "Neptune",
+        "img": "planetsNeptune.png",
+        "description": "This is the SMALL planet",
+        "price": 400.00,
+        "category":"planets"
+      },
+      {
+        "id": "pPl09",
         "name": "Pluto",
-        "img": "planetsPluto.jpg",
+        "img": "planetsPluto.png",
         "description": "This is the SMALL planet",
         "price": 400.00,
         "category":"planets"

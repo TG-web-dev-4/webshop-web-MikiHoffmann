@@ -1,13 +1,11 @@
 import { connect } from "react-redux";
 
-import { StyledMain } from "../styles/styledComponents/Main.styled";
 import { StyledArticle } from "../styles/styledComponents/Article.styled";
 import ProductCard from "../components/ProductCard";
 
 const HomePage = ({ products }) => {
   //console.log(allProducts[0]);
   return (
-    <StyledMain>
       <StyledArticle>
         <h2>homepage</h2>
         <div>
@@ -15,7 +13,6 @@ const HomePage = ({ products }) => {
         </div>
         <ProductCard products={products} />
       </StyledArticle>
-    </StyledMain>
   );
 };
 

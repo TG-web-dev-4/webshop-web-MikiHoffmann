@@ -2,8 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles/GlobalStyle";
 import { themeLight } from "./styles/Themes";
+import { StyledMain } from "./styles/styledComponents/Main.styled";
 
 import ScrollToTop from "./components/ScrollToTop";
+import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -18,15 +20,18 @@ function App() {
     <ThemeProvider theme={themeLight}>
       <GlobalStyle />
       <Router>
+        <NavBar />
         <Header />
         <ScrollToTop>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/products" element={<ProductPage />} />
-            <Route path="/details" element={<ProductDetailPage />} />
-            <Route path="/signIn" element={<SignInPage />} />
-            <Route path="/cart" element={<ShoppingCartPage />} />
-          </Routes>
+          <StyledMain className="backgroundImg">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/products" element={<ProductPage />} />
+              <Route path="/details" element={<ProductDetailPage />} />
+              <Route path="/signIn" element={<SignInPage />} />
+              <Route path="/cart" element={<ShoppingCartPage />} />
+            </Routes>
+          </StyledMain>
           <Footer />
         </ScrollToTop>
       </Router>
