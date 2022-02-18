@@ -32,17 +32,15 @@ const CartListItem = ({
   };
   return (
     <StyledCartListItem>
-      <span className="itemTitle">
-        {cartItem.name}
-        {itemTotalPrice}
-      </span>
-      <span className="qtyDisplay"> times:{inputQty}</span>
-      <img src={`../images/productImg/${cartItem.img}`} alt={cartItem.name} />
-      <span className="adjustSelector">
-        adjust amount:
-        <StyledLinkButton onClick={onDecrease}>-</StyledLinkButton>
-        <StyledLinkButton onClick={onIncrease}>+</StyledLinkButton>
-      </span>
+      <span className="itemTitle">{cartItem.name}</span>
+      <span className="qtyDisplay">nr of items: {inputQty}</span>
+      <div className="itemImgContainer">
+        <img src={`../images/productImg/${cartItem.img}`} alt={cartItem.name} />
+      </div>
+
+      <StyledLinkButton className="decreaseButton" onClick={onDecrease}>-</StyledLinkButton>
+      <StyledLinkButton className="increaseButton" onClick={onIncrease}>+</StyledLinkButton>
+
       <img
         src="../images/iconDelete.png"
         alt="delete icon"
@@ -51,6 +49,8 @@ const CartListItem = ({
           removeFromCart(cartItem.id);
         }}
       />
+      <StyledLinkButton className="detailsButton">view details</StyledLinkButton>
+      <span className="itemPrice">total: {itemTotalPrice} money</span>
     </StyledCartListItem>
   );
 };
