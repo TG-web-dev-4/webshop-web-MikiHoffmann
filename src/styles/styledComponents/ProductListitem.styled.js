@@ -8,7 +8,7 @@ export const StyledProductListItem = styled.li`
   width: 100%;
   margin: 1em 0;
   padding: 0.2em;
-  border-top: 2px solid white;
+  border-top: ${({theme}) => theme.colors.brdrWht};
   .itemTitle {
     grid-area: 1/1/2/11;
   }
@@ -16,8 +16,7 @@ export const StyledProductListItem = styled.li`
     grid-area: 2/1/10/11;
     aspect-ratio: 8/5;
     width: 100%;
-    border: .1em solid rgb(0,0,0);
-    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    box-shadow: ${({theme}) => theme.colors.boxShdwRght};
     overflow: hidden;
   }
   .itemImg {

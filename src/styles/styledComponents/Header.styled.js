@@ -8,10 +8,10 @@ export const StyledHeader = styled.header`
   grid-template-rows: repeat(3, auto);
   grid-template-columns: repeat(10, 1fr);
   grid-gap: 0.3em;
-  padding: 1em;
+  padding: .5em;
   border-top: .1em solid rgb(0,0,0);
   border-bottom: .1em solid rgb(0,0,0);
-  box-shadow: -2px -2px 4px rgb(0, 0, 0), 2px 2px 4px rgb(0, 0, 0);
+  box-shadow: ${({ theme }) => theme.colors.boxShdwAll};
   z-index: 1200;
   img {
     display: block;

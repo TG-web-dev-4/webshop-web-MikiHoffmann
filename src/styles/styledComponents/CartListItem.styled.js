@@ -11,7 +11,7 @@ export const StyledCartListItem = styled.li`
   img {
     grid-area: 1/1/4/5;
     height: 100%;
-    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    box-shadow: ${({theme}) => theme.colors.boxShdwRght};
   }
   .itemTitle {
     grid-area: 1/5/2/11;
@@ -40,8 +40,10 @@ export const StyledCartListItem = styled.li`
   .deleteButton {
     grid-area: 3/9/4/11;
     border-radius: 50%;
-    border: 1px solid white;
     cursor: pointer;
+    img {
+      height: 100%;
+    }
     &:hover {
       background-color: red;
     }

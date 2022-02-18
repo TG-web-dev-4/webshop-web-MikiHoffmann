@@ -3,5 +3,5 @@ import styled from "styled-components";
 export const StyledMain = styled.main`
   height: auto;
   width: 100%;
-  padding-top: 8em;
+  padding-top: 9em;
 `;

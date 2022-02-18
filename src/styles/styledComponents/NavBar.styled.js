@@ -9,9 +9,9 @@ export const StyledNavBar = styled.nav`
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  border-top: 0.1em solid rgb(0, 0, 0);
-  border-bottom: 0.1em solid rgb(0, 0, 0);
-  box-shadow: -2px -2px 4px rgb(0, 0, 0), 2px 2px 4px rgb(0, 0, 0);
+  border-top: ${({theme}) => theme.colors.brdrBlk};
+  border-bottom: ${({theme}) => theme.colors.brdrBlk};
+  box-shadow: ${({theme}) => theme.colors.boxShdwAll};
   .pageLink {
     position: relative;
     height: 70%;
@@ -29,19 +29,19 @@ export const StyledNavBar = styled.nav`
       height: 1em;
       width: 1em;
       background-color: transparent;
-      border-radius: 50%;
       z-index: 1;
       .cartCounter {
         font-size: 0.6em;
         font-weight: bold;
-      color: rgb(0,0,0);
+        color: red;
       }
     }
   }
   .linkWord {
     display: none;
     @media only screen and (min-width: 31.25em) {
-      display: inline-block;
+      display: block;
+      margin: .25em auto;
     }
   }
   .linkIcon {

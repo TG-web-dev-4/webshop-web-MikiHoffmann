@@ -15,7 +15,7 @@ export const StyledProductCard = styled.div`
   }
   img {
     grid-area: 2/1/3/11;
-    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    box-shadow: ${({theme}) => theme.colors.boxShdwRght};
   }
   .itemDescription {
     grid-area: 3/1/4/11;

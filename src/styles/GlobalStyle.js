@@ -13,10 +13,10 @@ body {
     height: 100%;
     width: 100%;
     background-color: ${({ theme }) => theme.colors.bgClr};
-    
-    color: ${({ theme }) => theme.colors.Clr};
+    color: ${({ theme }) => theme.colors.clr};
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1em;
+    text-shadow: 0 0 2px rgb(0,0,0);
     overflow-x: hidden;
 }
 .root {
@@ -66,9 +66,12 @@ body {
         background-size: 150%;
     }
 }
+p {
+    margin-top: 1em;
+}
 a {
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.Clr};
+    color: ${({ theme }) => theme.colors.clr};
 }
 img {
     height: auto;

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
-
+import { ThemeProvider } from "styled-components";
+import { themeDark } from "../styles/Themes";
 import { StyledProductListItem } from "../styles/styledComponents/ProductListItem.styled";
 import { StyledLinkButton } from "../styles/styledComponents/LinkButton.styled";
 import { addToCart } from "../state/actions/shopActions";
@@ -11,22 +12,26 @@ const ProductListItem = ({ product, addToCart }) => {
         <h4>{product.name}</h4>
       </span>
       <div className="itemImgContainer">
-      <img className="itemImg" src={`../images/productImg/${product.img}`} alt={product.name} />
+        <img
+          className="itemImg"
+          src={`../images/productImg/${product.img}`}
+          alt={product.name}
+        />
       </div>
-      
-      
-      <StyledLinkButton className="detailsButton">
-        view details
-      </StyledLinkButton>
       <span className="itemPrice">{product.price} money</span>
-      <StyledLinkButton
-        className="addButton"
-        onClick={() => {
-          addToCart(product.id);
-        }}
-      >
-        add to my shoppingcart
-      </StyledLinkButton>
+      <ThemeProvider theme={themeDark}>
+        <StyledLinkButton className="detailsButton">
+          view details
+        </StyledLinkButton>
+        <StyledLinkButton
+          className="addButton"
+          onClick={() => {
+            addToCart(product.id);
+          }}
+        >
+          add to my shoppingcart
+        </StyledLinkButton>
+      </ThemeProvider>
     </StyledProductListItem>
   );
 };
