@@ -1,14 +1,19 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
+import { reactReduxFirebase } from "react-redux-firebase";
 
+import firebase from "../services/FirebaseConfig";
 import { allReducers } from "./reducers/allReducers";
 import { initialState } from "./initialState";
 
-const store = createStore(
-    allReducers,
-    initialState,
-    composeWithDevTools(applyMiddleware(thunk))
+const createStoreWithFirebase = compose(reactReduxFirebase(firebase))(
+  createStore
+);
+const store = createStoreWithFirebase(
+  allReducers,
+  initialState,
+  composeWithDevTools(applyMiddleware(thunk))
 );
 
-export default store
+export default store;
