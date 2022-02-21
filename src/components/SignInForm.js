@@ -7,16 +7,16 @@ const SignInForm = () => {
       <legend>
         <h3>Sign In &#64; spaceWalkers</h3>
       </legend>
-      <label for="userName">username</label>
+      <label htmlFor="userName">username</label>
       <input
         type="text"
         id="userName"
         placeholder="please enter your username..."
       />
-      <label for="setPassword">password</label>
+      <label htmlFor="setPassword">password</label>
       <input
         type="password"
-        id="setPasswword"
+        id="setPassword"
         placeholder="please enter your password..."
       />
       <div className="buttonContainer">

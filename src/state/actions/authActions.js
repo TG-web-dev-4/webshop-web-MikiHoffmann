@@ -6,12 +6,12 @@ export const SignUp = (email, password) => async (dispatch) => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then((dataBeforeEmail) => {
+      .then(dataBeforeEmail => {
         firebase.auth().onAuthStateChanged(function (user) {
           user.sendEmailVerification();
         });
       })
-      .then((dataAfterEmail) => {
+      .then(dataAfterEmail => {
         firebase.auth().onAuthStateChanged(function (user) {
           if (user.emailVerified) {
             // email verified
