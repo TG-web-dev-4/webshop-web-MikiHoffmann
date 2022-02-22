@@ -15,11 +15,10 @@ const SignInPage = () => {
         <p>
           You do not have an account yet?<br></br>
           No problem, just
-          <StyledLinkButton>Sign In</StyledLinkButton>!
+          <StyledLinkButton>Sign Up</StyledLinkButton>!
         </p>
         <p>
-          If you are already a privileged member:<br></br>
-          Just <StyledLinkButton>Sign On</StyledLinkButton>!
+          <StyledLinkButton>Sign In</StyledLinkButton> if you are already a privileged member!
         </p>
       </StyledArticle>
       <StyledArticle>
