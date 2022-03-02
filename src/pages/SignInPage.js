@@ -1,12 +1,12 @@
 import { StyledArticle } from "../components/styledComponents/Article.styled";
-import LogInForm from "../components/LogInForm";
+import SignInForm from "../components/SignInForm";
 
 const SignInPage = () => {
   return (
     <>
       <StyledArticle></StyledArticle>
       <StyledArticle>
-        <LogInForm />
+        <SignInForm />
       </StyledArticle>
     </>
   );

@@ -17,7 +17,7 @@ const NavBar = () => {
   return (
     <>
       <StyledNavBar className="backgroundImg">
-        <Link to="/home">
+        <Link to="/">
           <img
             className="linkIcon"
             src="../images/bckgrndLogo/spaceWalkersLogo.png"

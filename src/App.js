@@ -15,7 +15,7 @@ import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import DetailsPage from "./pages/DetailsPage";
 import CartPage from "./pages/CartPage";
-import RegisterForm from "./components/RegisterForm";
+import SignUpForm from "./components/SignUpForm";
 import ResetForm from "./components/ResetForm";
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
                 <Route path="/products" element={<ProductsPage />} />
                 <Route path="/details/" element={<DetailsPage />} />
                 <Route path="/cart" element={<CartPage />} />
-                <Route path="/register" element={<RegisterForm/>} />
+                <Route path="/signup" element={<SignUpForm/>} />
                 <Route path="/reset" element={<ResetForm/>}/>
               </Routes>
               <Footer />

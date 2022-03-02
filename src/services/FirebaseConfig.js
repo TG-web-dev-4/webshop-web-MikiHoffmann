@@ -35,10 +35,11 @@ const FirebaseConfig = {
   measurementId,
 };
 const app = initializeApp(FirebaseConfig);
-console.log(apiKey);
-console.log(FirebaseConfig);
+//console.log(apiKey);
+//console.log(FirebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
   try {
@@ -46,7 +47,6 @@ const signInWithGoogle = async () => {
     const user = res.user;
     const q = query(collection(db, "users"), where("uid", "==", user.uid));
     const docs = await getDocs(q);
-
     if (docs.docs.length === 0) {
       await addDoc(collection(db, "users"), {
         uid: user.uid,
@@ -57,6 +57,7 @@ const signInWithGoogle = async () => {
     }
   } catch (err) {
     console.error(err);
+    alert(err.message);
   }
 };
 const logInWithEmailAndPassword = async (email, password) => {
@@ -64,10 +65,10 @@ const logInWithEmailAndPassword = async (email, password) => {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (err) {
     console.error(err);
-    //alert(err.messsage);
+    alert(err.messsage);
   }
 };
-const registerWithEmailAndPassword = async (name, email, password) => {
+const signUpWithEmailAndPassword = async (name, email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
@@ -79,7 +80,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
     });
   } catch (err) {
     console.error(err);
-    //alert(err.messsage);
+    alert(err.messsage);
   }
 };
 const sendPasswordReset = async (email) => {
@@ -88,7 +89,7 @@ const sendPasswordReset = async (email) => {
     alert("Password reset link sent");
   } catch (err) {
     console.error(err);
-    //alert(err.messsage);
+    alert(err.messsage);
   }
 };
 const logout = () => {
@@ -100,7 +101,7 @@ export {
   db,
   signInWithGoogle,
   logInWithEmailAndPassword,
-  registerWithEmailAndPassword,
+  signUpWithEmailAndPassword,
   sendPasswordReset,
   logout,
 };

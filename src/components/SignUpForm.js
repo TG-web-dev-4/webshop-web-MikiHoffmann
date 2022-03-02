@@ -3,27 +3,29 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import {
   auth,
-  registerWithEmailAndPassword,
+  signUpWithEmailAndPassword,
   signInWithGoogle,
 } from "../services/FirebaseConfig";
 import { StyledForm } from "../components/styledComponents/Form.styled";
 import { StyledLinkButton } from "../components/styledComponents/LinkButton.styled";
-const RegisterForm = () => {
+
+const SignUpForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
+  const [error, setError] = useState("");
   //console.log(signUpEmail);
   //console.log(signUpPassword);
   const navigate = useNavigate();
-  const register = () => {
-    if (!name) alert("please enter a name");
-    registerWithEmailAndPassword(name, email, password);
+  const signUp = () => {
+    if (!name) setError("please enter a name");
+    signUpWithEmailAndPassword(name, email, password);
   };
   useEffect(() => {
     if (loading) return;
     if (user) navigate("/home");
-  }, [user, loading,navigate]);
+  }, [user, loading]);
 
   return (
     <>
@@ -58,17 +60,27 @@ const RegisterForm = () => {
           value={password}
           placeholder="please choose a password..."
           onChange={(e) => {
-            e.preventDefault();
             setPassword(e.target.value);
           }}
         />
+        {error}
         <div className="buttonContainer">
-          <StyledLinkButton className="cancelButton">cancel</StyledLinkButton>
-          <StyledLinkButton className="confirmButton" onClick={register}>
-            register
+          <StyledLinkButton className="confirmButton" onClick={signUp}>
+            Sign Up
           </StyledLinkButton>
-          <StyledLinkButton className="confirmButton" onClick={signInWithGoogle}>
-            register with Google
+        </div>
+        <div className="buttonContainer">
+          <StyledLinkButton
+            className="confirmButton"
+            onClick={signInWithGoogle}
+          >
+            Sign Up with Google
+          </StyledLinkButton>
+        </div>
+        <div className="buttonContainer">
+          Already an exclusive spaceWalker?
+          <StyledLinkButton>
+            <Link to="/">Sign In</Link>
           </StyledLinkButton>
         </div>
       </StyledForm>
@@ -76,4 +88,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default SignUpForm;

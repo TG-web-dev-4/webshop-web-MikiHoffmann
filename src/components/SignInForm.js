@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../services/FirebaseConfig";
+import {
+  auth,
+  logInWithEmailAndPassword,
+  signInWithGoogle,
+} from "../services/FirebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { StyledForm } from "../components/styledComponents/Form.styled";
-import { StyledLinkButton } from "../components/styledComponents/LinkButton.styled";
+import { StyledForm } from "./styledComponents/Form.styled";
+import { StyledLinkButton } from "./styledComponents/LinkButton.styled";
 
-const LogInForm = () => {
+const SignInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   //console.log(email);
@@ -18,7 +22,7 @@ const LogInForm = () => {
       return;
     }
     if (user) navigate("/home");
-  }, [user, loading, navigate]);
+  }, [user, loading]);
 
   return (
     <>
@@ -43,34 +47,31 @@ const LogInForm = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <div className="buttonContainer">
-          <StyledLinkButton className="cancelButton">cancel</StyledLinkButton>
           <StyledLinkButton
             className="confirmButton"
             onClick={() => logInWithEmailAndPassword(email, password)}
           >
-            login
+            Sign In
           </StyledLinkButton>
         </div>
-        
+
         <div className="buttonContainer">
-        <StyledLinkButton onClick={() => signInWithGoogle}>
-          Login with Google
-        </StyledLinkButton>
+          <StyledLinkButton onClick={signInWithGoogle}>
+            Login with Google
+          </StyledLinkButton>
         </div>
         <div className="buttonContainer">
-          <span>Not an exclusive spaceWalker yet?</span>
-          <span>
-            Just
-            <StyledLinkButton>
-              <Link to="/register">register</Link>
-            </StyledLinkButton>
-            .
-          </span>
+          <Link to="/reset">Forgot Password</Link>
         </div>
-        <Link to="/reset">Forgot Password</Link>
+        <div className="buttonContainer">
+          Not an exclusive spaceWalker yet?
+          <StyledLinkButton>
+            <Link to="/signup">Sign Up now</Link>
+          </StyledLinkButton>
+        </div>
       </StyledForm>
     </>
   );
 };
 
-export default LogInForm;
+export default SignInForm;

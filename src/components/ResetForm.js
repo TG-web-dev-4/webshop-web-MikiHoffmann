@@ -7,17 +7,17 @@ import { StyledLinkButton } from "./styledComponents/LinkButton.styled";
 
 const ResetForm = () => {
   const [email, setEmail] = useState("");
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
   useEffect(() => {
     if (loading) return;
     if (user) navigate("/home");
-  }, [loading, user, navigate]);
+  }, [loading, user]);
 
   return (
     <StyledForm>
       <legend>
-        <h3>Sign Up &#64; spaceWalkers</h3>
+        <h3>Reset your spaceWalkers password</h3>
       </legend>
       <label htmlFor="eMail">email</label>
       <input
@@ -29,12 +29,20 @@ const ResetForm = () => {
           setEmail(e.target.value);
         }}
       />
-      <StyledLinkButton
-        className="confirmButton"
-        onClick={() => sendPasswordReset(email)}
-      >
-        register
-      </StyledLinkButton>
+      <div className="buttonContainer">
+        <StyledLinkButton
+          className="confirmButton"
+          onClick={() => sendPasswordReset(email)}
+        >
+          Send me a reset email.
+        </StyledLinkButton>
+      </div>
+      <div className="buttonContainer">
+        Not an exclusive spaceWalker yet?
+        <StyledLinkButton>
+          <Link to="/signup">Sign Up now</Link>
+        </StyledLinkButton>
+      </div>
     </StyledForm>
   );
 };
