@@ -34,18 +34,18 @@ export const shopReducer = (state = initialState, action) => {
     case actions.decreaseQuantity:
       return {
         ...state,
-        cartItem: state.cartItems.map((cartItem) =>
+        cartItems: state.cartItems.map((cartItem) =>
           cartItem.id === action.payload.id
-            ? { ...cartItem, qty: action.payload.qty -1  }
+            ? { ...cartItem, qty: cartItem.qty - 1 }
             : cartItem
         ),
       };
       case actions.increaseQuantity:
       return {
         ...state,
-        cartItem: state.cartItems.map((cartItem) =>
+        cartItems: state.cartItems.map((cartItem) =>
           cartItem.id === action.payload.id
-            ? { ...cartItem, qty: action.payload.qty +1 }
+            ? { ...cartItem, qty: cartItem.qty + 1 }
             : cartItem
         ),
       };

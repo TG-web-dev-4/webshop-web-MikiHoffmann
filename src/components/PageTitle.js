@@ -1,4 +1,4 @@
-import { StyledPageTitle } from "../styles/styledComponents/PageTitle.styled";
+import { StyledPageTitle } from "../components/styledComponents/PageTitle.styled";
 
 const PageTitle = ({ pageTitle }) => {
   return (

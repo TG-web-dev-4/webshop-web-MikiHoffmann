@@ -1,11 +1,13 @@
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
+import { Link } from "react-router-dom";
 import { themeDark } from "../styles/Themes";
-import { StyledProductListItem } from "../styles/styledComponents/ProductListItem.styled";
-import { StyledLinkButton } from "../styles/styledComponents/LinkButton.styled";
+import { StyledProductListItem } from "../components/styledComponents/ProductListItem.styled";
+import { StyledLinkButton } from "../components/styledComponents/LinkButton.styled";
 import { addToCart } from "../state/actions/shopActions";
 
-const ProductListItem = ({ product, addToCart }) => {
+const ProductListItem = ({ product }) => {
+  const dispatch = useDispatch();
   return (
     <StyledProductListItem>
       <span className="itemTitle">
@@ -20,13 +22,16 @@ const ProductListItem = ({ product, addToCart }) => {
       </div>
       <span className="itemPrice">{product.price} money</span>
       <ThemeProvider theme={themeDark}>
-        <StyledLinkButton className="detailsButton">
-          view details
+        <StyledLinkButton
+          className="detailsButton"
+          
+        >
+          <Link to={`/${product.id}`}>view details</Link>
         </StyledLinkButton>
         <StyledLinkButton
           className="addButton"
           onClick={() => {
-            addToCart(product.id);
+            dispatch(addToCart(product.id));
           }}
         >
           add to my shoppingcart
@@ -36,10 +41,4 @@ const ProductListItem = ({ product, addToCart }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addToCart: (id) => dispatch(addToCart(id)),
-  };
-};
-
-export default connect(null, mapDispatchToProps)(ProductListItem);
+export default ProductListItem;

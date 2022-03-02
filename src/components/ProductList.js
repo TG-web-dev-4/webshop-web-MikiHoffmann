@@ -1,4 +1,4 @@
-import { StyledProductList } from "../styles/styledComponents/ProductList.styled";
+import { StyledProductList } from "../components/styledComponents/ProductList.styled";
 import ProductListItem from "./ProductListItem";
 
 const ProductList = ({ products }) => {

@@ -4,6 +4,8 @@ export const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 30em;
+    margin: 0 auto;
     padding: 1.3em;
     background-color: ${({theme}) => theme.colors.bgClr};
     box-shadow: ${({theme}) => theme.colors.boxShdwRght};

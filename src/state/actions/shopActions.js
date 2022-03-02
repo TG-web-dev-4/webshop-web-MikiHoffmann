@@ -18,28 +18,28 @@ export const removeFromCart = (cartItemID) => {
   };
 };
 
-export const decreaseQuantity = (cartItemID, inputQty) => {
+export const decreaseQuantity = (cartItemID, value) => {
   return {
     type: actions.decreaseQuantity,
     payload: {
       id: cartItemID,
-      qty: inputQty,
+      qty: value,
     },
   };
 };
-export const increaseQuantity = (cartItemID, inputQty) => {
+export const increaseQuantity = (cartItemID, value) => {
   return {
     type: actions.increaseQuantity,
     payload: {
       id: cartItemID,
-      qty: inputQty,
+      qty: value,
     },
   };
 };
 
-export const displayCurrentItem = (cartItemID) => {
+export const displayCurrentItem = (itemID) => {
   return {
     type: actions.displayCurrentItem,
-    payload: cartItemID,
+    payload: itemID,
   };
 };

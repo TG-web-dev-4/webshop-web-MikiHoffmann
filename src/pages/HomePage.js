@@ -1,27 +1,17 @@
-import { connect } from "react-redux";
+import { StyledArticle } from "../components/styledComponents/Article.styled";
 
-import { StyledArticle } from "../styles/styledComponents/Article.styled";
-import PageTitle from "../components/PageTitle";
-import ProductCard from "../components/ProductCard";
-
-const HomePage = ({ products }) => {
-  //console.log(allProducts[0]);
-  const pageTitle = "Welcome to the best way to get your own universe";
+const HomePage = () => {
   return (
     <>
-      <PageTitle pageTitle={pageTitle}/>
-      <StyledArticle>
-        
-        <ProductCard products={products} />
-      </StyledArticle>
+    <StyledArticle>
+      <h2>Welcome to spaceWalkers...</h2>
+    <p>
+    The best way to make your own universe!
+    </p>
+    </StyledArticle>
+    
     </>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    products: state.shop.products,
-  };
-};
-
-export default connect(mapStateToProps)(HomePage);
+export default HomePage;

@@ -1,41 +1,48 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles/GlobalStyle";
 import { themeLight } from "./styles/Themes";
-import { StyledMain } from "./styles/styledComponents/Main.styled";
 
-import ScrollToTop from "./components/ScrollToTop";
-import NavBar from "./components/NavBar";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import ScrollToTop from "./components/mainComponents/ScrollToTop";
+import { StyledMain } from "./components/styledComponents/Main.styled";
+import Header from "./components/mainComponents/Header";
+import NavBar from "./components/mainComponents/NavBar";
+import Footer from "./components/mainComponents/Footer";
 
-import HomePage from "./pages/HomePage";
-import ProductPage from "./pages/ProductPage";
-import ProductDetailPage from "./pages/ProductDetailPage";
 import SignInPage from "./pages/SignInPage";
-import ShoppingCartPage from "./pages/ShoppingCartPage";
+import HomePage from "./pages/HomePage";
+import ProductsPage from "./pages/ProductsPage";
+import DetailsPage from "./pages/DetailsPage";
+import CartPage from "./pages/CartPage";
+import RegisterForm from "./components/RegisterForm";
+import ResetForm from "./components/ResetForm";
 
 function App() {
   return (
-    <ThemeProvider theme={themeLight}>
-      <GlobalStyle />
-      <Router>
-        <NavBar />
-        <Header />
-        <ScrollToTop>
+    <>
+      <ThemeProvider theme={themeLight}>
+        <GlobalStyle />
+        <Router>
+          <Header />
+          <NavBar />
           <StyledMain className="backgroundImg">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/products" element={<ProductPage />} />
-              <Route path="/details" element={<ProductDetailPage />} />
-              <Route path="/signIn" element={<SignInPage />} />
-              <Route path="/cart" element={<ShoppingCartPage />} />
-            </Routes>
+            <ScrollToTop>
+              <Routes>
+                <Route exact path="/" element={<SignInPage />} />
+                <Route path="/home" element={<HomePage />} />
+                <Route path="/products" element={<ProductsPage />} />
+                <Route path="/details/" element={<DetailsPage />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/register" element={<RegisterForm/>} />
+                <Route path="/reset" element={<ResetForm/>}/>
+              </Routes>
+              <Footer />
+            </ScrollToTop>
           </StyledMain>
-          <Footer />
-        </ScrollToTop>
-      </Router>
-    </ThemeProvider>
+        </Router>
+      </ThemeProvider>
+    </>
   );
 }
 
