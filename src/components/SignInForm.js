@@ -1,29 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import {
-  auth,
-  logInWithEmailAndPassword,
-  signInWithGoogle,
-} from "../services/FirebaseConfig";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth, signInWithGoogle } from "../services/FirebaseConfig";
 import { StyledForm } from "./styledComponents/Form.styled";
 import { StyledLinkButton } from "./styledComponents/LinkButton.styled";
 
 const SignInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   //console.log(email);
   //console.log(password);
-  const [user, loading, error] = useAuthState(auth);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (loading) {
-      // loading animation
-      return;
-    }
-    if (user) navigate("/home");
-  }, [user, loading]);
-
+  const signIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((credentials) => {
+        console.log("You signed In:", credentials.user);
+      })
+      .catch((err) => {
+        setError(err);
+        console.log(error.message);
+      });
+  };
   return (
     <>
       <StyledForm id="signInForm">
@@ -47,10 +45,7 @@ const SignInForm = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <div className="buttonContainer">
-          <StyledLinkButton
-            className="confirmButton"
-            onClick={() => logInWithEmailAndPassword(email, password)}
-          >
+          <StyledLinkButton className="confirmButton" onClick={signIn}>
             Sign In
           </StyledLinkButton>
         </div>

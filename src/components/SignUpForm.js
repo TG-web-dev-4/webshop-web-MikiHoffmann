@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, signInWithGoogle } from "../services/FirebaseConfig";
@@ -14,13 +13,13 @@ const SignUpForm = () => {
   //console.log(signUpEmail);
   //console.log(signUpPassword);
   const navigate = useNavigate();
-  
+
   const signUp = (e) => {
     e.preventDefault();
-
     createUserWithEmailAndPassword(auth, email, password)
       .then((credentials) => {
         console.log("user created:", credentials.user);
+        //if (user) navigate("/");
       })
       .catch((err) => {
         setError(err);
@@ -69,7 +68,7 @@ const SignUpForm = () => {
             setPassword(e.target.value);
           }}
         />
-        {error}
+        {error.message}
         <div className="buttonContainer">
           <StyledLinkButton className="confirmButton" onClick={signUp}>
             Sign Up
