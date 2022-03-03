@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/webshop-web-MikiHoffmann/static/js/main.f3401c7e.js",
+    "main.js": "/webshop-web-MikiHoffmann/static/js/main.1eba0c70.js",
     "index.html": "/webshop-web-MikiHoffmann/index.html",
-    "main.f3401c7e.js.map": "/webshop-web-MikiHoffmann/static/js/main.f3401c7e.js.map"
+    "main.1eba0c70.js.map": "/webshop-web-MikiHoffmann/static/js/main.1eba0c70.js.map"
   },
   "entrypoints": [
-    "static/js/main.f3401c7e.js"
+    "static/js/main.1eba0c70.js"
   ]
 }
