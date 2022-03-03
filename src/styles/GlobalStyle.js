@@ -23,7 +23,7 @@ body {
     height: 100%;
 }
 .backgroundImg {
-    background-image: url('../images/bckgrndLogo/nebulaPortrait.jpg');
+    background-image: url('images/bckgrndLogo/nebulaPortrait.jpg');
     background-position: center;
     background-attachment: fixed;
     background-size: 150%;
@@ -35,12 +35,12 @@ body {
 }
 @media only screen and (orientation: landscape) {
     .backgroundImg {
-        background-image: url('../images/bckgrndLogo/nebula.jpg');
+        background-image: url('images/bckgrndLogo/nebula.jpg');
     }
 }
 @media only screen and (min-width: 35em) and (orientation: landscape) {
     .backgroundImg {
-    background-image: url('../images/bckgrndLogo/nebula.jpg');
+    background-image: url('images/bckgrndLogo/nebula.jpg');
     background-size: 100%;
     }
     @keyframes zoomInOut {
