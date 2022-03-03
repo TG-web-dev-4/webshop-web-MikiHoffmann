@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { StyledNavBar } from "../styledComponents/NavBar.styled";
 
-const NavBar = () => {
+const NavBar = ({user}) => {
   const cartItems = useSelector((state) => state.shop.cartItems);
   const [showCounter, setShowCounter] = useState(false);
   useEffect(() => {
@@ -24,13 +24,14 @@ const NavBar = () => {
             alt="spaceWalkers logo"
           />
         </Link>
-        <Link to="/">
+        {user && <Link to="/">
           <img
             className="linkIcon"
             src="images/icons/iconPerson.png"
             alt="person icon"
           />
-        </Link>
+        </Link>}
+        
         <Link to="/home">
           <img
             className="linkIcon"

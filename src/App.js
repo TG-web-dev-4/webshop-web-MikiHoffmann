@@ -1,5 +1,6 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
+import { AuthContextProvider, useAuthState } from "./contexts/AuthContext";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles/GlobalStyle";
 import { themeLight } from "./styles/Themes";
@@ -23,24 +24,26 @@ function App() {
     <>
       <ThemeProvider theme={themeLight}>
         <GlobalStyle />
-        <Router>
-          <Header />
-          <NavBar />
-          <StyledMain className="backgroundImg">
-            <ScrollToTop>
-              <Routes>
-                <Route exact path="/" element={<SignInPage />} />
-                <Route path="/home" element={<HomePage />} />
-                <Route path="/products" element={<ProductsPage />} />
-                <Route path="/details/" element={<DetailsPage />} />
-                <Route path="/cart" element={<CartPage />} />
-                <Route path="/signup" element={<SignUpForm/>} />
-                <Route path="/reset" element={<ResetForm/>}/>
-              </Routes>
-              <Footer />
-            </ScrollToTop>
-          </StyledMain>
-        </Router>
+        <AuthContextProvider>
+          <Router>
+            <Header />
+            <NavBar />
+            <StyledMain className="backgroundImg">
+              <ScrollToTop>
+                <Routes>
+                  <Route exact path="/" element={<SignInPage />} />
+                  <Route path="/home" element={<HomePage />} />
+                  <Route path="/products" element={<ProductsPage />} />
+                  <Route path="/details/" element={<DetailsPage />} />
+                  <Route path="/cart" element={<CartPage />} />
+                  <Route path="/signup" element={<SignUpForm />} />
+                  <Route path="/reset" element={<ResetForm />} />
+                </Routes>
+                <Footer />
+              </ScrollToTop>
+            </StyledMain>
+          </Router>
+        </AuthContextProvider>
       </ThemeProvider>
     </>
   );

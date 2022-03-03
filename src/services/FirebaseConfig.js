@@ -1,7 +1,7 @@
-
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
+  onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
   sendPasswordResetEmail,
@@ -14,6 +14,7 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
+
 
 const apiKey = process.env.REACT_APP_FB_apiKey;
 const authDomain = process.env.REACT_APP_FB_authDomain;
@@ -38,9 +39,13 @@ const FirebaseConfig = {
 const app = initializeApp(FirebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-//const navigate = useNavigate();
+
+
+
+
+
 const googleProvider = new GoogleAuthProvider();
-const signInWithGoogle = async () => {
+export const signInWithGoogle = async () => {
   try {
     const res = await signInWithPopup(auth, googleProvider);
     const user = res.user;
@@ -61,14 +66,4 @@ const signInWithGoogle = async () => {
 };
 
 
-const sendPasswordReset = async (email) => {
-  try {
-    await sendPasswordResetEmail(auth, email);
-    alert("Password reset link sent");
-  } catch (err) {
-    console.error(err);
-    alert(err.messsage);
-  }
-};
 
-export {signInWithGoogle, sendPasswordReset };
