@@ -1,10 +1,8 @@
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
-  onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
-  sendPasswordResetEmail,
 } from "firebase/auth";
 import {
   getFirestore,
