@@ -26,7 +26,7 @@ const CartListItem = ({ cartItem }) => {
       <span className="itemTitle">{cartItem.name}</span>
       <span className="qtyDisplay">nr of items: {cartItem.qty}</span>
       <div className="itemImgContainer">
-        <img src={`../images/productImg/${cartItem.img}`} alt={cartItem.name} />
+        <img src={`images/productImg/${cartItem.img}`} alt={cartItem.name} />
       </div>
 
       <StyledLinkButton className="decreaseButton" onClick={onDecrease}>
@@ -37,7 +37,7 @@ const CartListItem = ({ cartItem }) => {
       </StyledLinkButton>
 
       <img
-        src="../images/icons/iconDelete.png"
+        src="images/icons/iconDelete.png"
         alt="delete icon"
         className="deleteButton"
         onClick={() => {

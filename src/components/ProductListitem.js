@@ -16,7 +16,7 @@ const ProductListItem = ({ product }) => {
       <div className="itemImgContainer">
         <img
           className="itemImg"
-          src={`../images/productImg/${product.img}`}
+          src={`images/productImg/${product.img}`}
           alt={product.name}
         />
       </div>

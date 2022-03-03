@@ -20,28 +20,28 @@ const NavBar = () => {
         <Link to="/">
           <img
             className="linkIcon"
-            src="../images/bckgrndLogo/spaceWalkersLogo.png"
+            src="images/bckgrndLogo/spaceWalkersLogo.png"
             alt="spaceWalkers logo"
           />
         </Link>
         <Link to="/">
           <img
             className="linkIcon"
-            src="../images/icons/iconPerson.png"
+            src="images/icons/iconPerson.png"
             alt="person icon"
           />
         </Link>
         <Link to="/home">
           <img
             className="linkIcon"
-            src="../images/icons/iconHome.png"
+            src="images/icons/iconHome.png"
             alt="home icon"
           />
         </Link>
         <Link to="/products">
           <img
             className="linkIcon"
-            src="../images/icons/iconMenu.png"
+            src="images/icons/iconMenu.png"
             alt="menu icon"
           />
         </Link>
@@ -49,7 +49,7 @@ const NavBar = () => {
         <Link to="/cart">
           <img
             className="linkIcon"
-            src="../images/icons/iconShop.png"
+            src="images/icons/iconShop.png"
             alt="shop icon"
           />
           {showCounter ? (
