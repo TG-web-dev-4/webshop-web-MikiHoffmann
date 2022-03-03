@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
-import { auth, sendPasswordReset } from "../services/FirebaseConfig";
+import { Link } from "react-router-dom";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../services/FirebaseConfig";
 import { StyledForm } from "./styledComponents/Form.styled";
 import { StyledLinkButton } from "./styledComponents/LinkButton.styled";
 
 const ResetForm = () => {
   const [email, setEmail] = useState("");
-  const [user, loading] = useAuthState(auth);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (loading) return;
-    if (user) navigate("/home");
-  }, [loading, user]);
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
+  const passwordReset = (e) => {
+    e.preventDefault();
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        setMessage("A reset email has been send");
+      })
+      .catch((err) => {
+        setError(err);
+      });
+  };
   return (
     <StyledForm>
       <legend>
@@ -29,11 +35,9 @@ const ResetForm = () => {
           setEmail(e.target.value);
         }}
       />
+      {error.message}{message}
       <div className="buttonContainer">
-        <StyledLinkButton
-          className="confirmButton"
-          onClick={() => sendPasswordReset(email)}
-        >
+        <StyledLinkButton className="confirmButton" onClick={passwordReset}>
           Send me a reset email.
         </StyledLinkButton>
       </div>
