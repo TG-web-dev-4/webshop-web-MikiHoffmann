@@ -1,25 +1,29 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, signInWithGoogle } from "../services/FirebaseConfig";
+import { useAuth } from "../contexts/AuthContext";
 import { StyledForm } from "../components/styledComponents/Form.styled";
 import { StyledLinkButton } from "../components/styledComponents/LinkButton.styled";
 
 const SignUpForm = () => {
+  
+  const currentUser = useAuth()
+  console.log(currentUser)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [error, setError] = useState("");
   //console.log(signUpEmail);
   //console.log(signUpPassword);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const signUp = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((credentials) => {
         console.log("user created:", credentials.user);
-        //if (user) navigate("/");
+        //if (user) navigate("/home");
       })
       .catch((err) => {
         setError(err);

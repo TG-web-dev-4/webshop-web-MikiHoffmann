@@ -1,10 +1,10 @@
 /*
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
 
 import { query, collection, getDocs, where } from "firebase/firestore";
 */
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../services/FirebaseConfig";
 import { signOut } from "firebase/auth";
 import { StyledArticle } from "../components/styledComponents/Article.styled";
@@ -13,7 +13,6 @@ const HomePage = () => {
   /*
   const [user, loading] = useAuthState(auth);
   const [name, setName] = useState("");
-  const navigate = useNavigate();
   const fetchUserName = async () => {
     try {
       const q = query(collection(db, "users"), where("uid", "==", user?.uid));
@@ -32,12 +31,14 @@ const HomePage = () => {
   }, [user, loading]);
 */
 
+const navigate = useNavigate();
   const [error, setError] = useState("");
   const logout = (e) => {
     e.preventDefault();
     signOut(auth)
       .then(() => {
         console.log("You have signed out");
+        navigate('/')
       })
       .catch((err) => {
         setError(err);

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, signInWithGoogle } from "../services/FirebaseConfig";
 import { StyledForm } from "./styledComponents/Form.styled";
@@ -9,6 +9,7 @@ const SignInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
   //console.log(email);
   //console.log(password);
   const signIn = (e) => {
@@ -16,6 +17,7 @@ const SignInForm = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((credentials) => {
         console.log("You signed In:", credentials.user);
+        navigate('/home');
       })
       .catch((err) => {
         setError(err);
