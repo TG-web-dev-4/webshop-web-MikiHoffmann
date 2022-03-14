@@ -7,30 +7,13 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../services/FirebaseConfig";
 import { signOut } from "firebase/auth";
+import { useAuth } from "../contexts/AuthContext";
 import { StyledArticle } from "../components/styledComponents/Article.styled";
 import { StyledLinkButton } from "../components/styledComponents/LinkButton.styled";
 const HomePage = () => {
-  /*
-  const [user, loading] = useAuthState(auth);
-  const [name, setName] = useState("");
-  const fetchUserName = async () => {
-    try {
-      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
-      const doc = await getDocs(q);
-      const data = doc.docs[0].data();
-      setName(data.name);
-    } catch (error) {
-      console.error(error);
-      setError("An error occured while fetching user data");
-    }
-  };
-  useEffect(() => {
-    if (loading) return;
-    if (!user) navigate("/");
-    fetchUserName();
-  }, [user, loading]);
-*/
-
+  
+const currentUser = useAuth()
+console.log(currentUser)
 const navigate = useNavigate();
   const [error, setError] = useState("");
   const logout = (e) => {
@@ -53,8 +36,9 @@ const navigate = useNavigate();
           <h2>Welcome to spaceWalkers...</h2>
           <p>The best way to make your own universe!</p>
         </div>
-        <div>Loged In as username</div>
-        <div>user?.email</div>
+        
+        <div>You loged In with {currentUser.currentUser?.email}</div>
+        <div></div>
         <div>
           <StyledLinkButton onClick={logout}>LogOut</StyledLinkButton>
         </div>
