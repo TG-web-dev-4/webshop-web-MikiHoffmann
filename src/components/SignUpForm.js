@@ -23,19 +23,12 @@ const SignUpForm = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((credentials) => {
         console.log("user created:", credentials.user);
-        //if (user) navigate("/home");
       })
       .catch((err) => {
         setError(err);
         console.log(error.message);
       });
   };
-/*
-  useEffect(() => {
-    if (loading) return;
-    if (user) navigate("/home");
-  }, [user, loading]);
-*/
   return (
     <>
       <StyledForm>
