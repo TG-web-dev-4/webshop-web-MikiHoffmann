@@ -1,9 +1,29 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../../services/FirebaseConfig";
+import { useAuth } from "../../contexts/AuthContext";
 import { StyledNavBar } from "../styledComponents/NavBar.styled";
 
-const NavBar = ({user}) => {
+const NavBar = () => {
+  const currentUser = useAuth();
+  console.log(currentUser);
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const logout = (e) => {
+    e.preventDefault();
+    signOut(auth)
+      .then(() => {
+        console.log("You have signed out");
+        navigate("/");
+      })
+      .catch((err) => {
+        setError(err);
+        console.log(error.message);
+      });
+  };
   const cartItems = useSelector((state) => state.shop.cartItems);
   const [showCounter, setShowCounter] = useState(false);
   useEffect(() => {
@@ -24,13 +44,16 @@ const NavBar = ({user}) => {
             alt="spaceWalkers logo"
           />
         </Link>
-        {user && <Link to="/">
-          <img
+        {currentUser.currentUser && <Link to="/">
+        <img
             className="linkIcon"
             src="images/icons/iconPerson.png"
             alt="person icon"
+            onClick={logout}
           />
-        </Link>}
+        </Link>
+          
+        }
         
         <Link to="/home">
           <img
