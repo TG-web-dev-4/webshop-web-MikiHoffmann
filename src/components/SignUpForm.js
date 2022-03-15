@@ -7,17 +7,16 @@ import { StyledForm } from "../components/styledComponents/Form.styled";
 import { StyledLinkButton } from "../components/styledComponents/LinkButton.styled";
 
 const SignUpForm = () => {
-  
-  const currentUser = useAuth()
-  console.log(currentUser)
+  const currentUser = useAuth();
+  console.log(currentUser);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [error, setError] = useState("");
-  //console.log(signUpEmail);
-  //console.log(signUpPassword);
+  console.log(email);
+  console.log(password);
   //const navigate = useNavigate();
-
+  //const displayName = name;
   const signUp = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)

@@ -6,6 +6,7 @@ display: grid;
 grid-template-columns: repeat(10, 1fr);
 grid-template-rows: repeat(4, 1fr);
 grid-gap: 0.5em;
+margin-bottom: 7em;
 .footerTitle {
     grid-area: 1/1/2/11;
     width: 100%;

@@ -10,7 +10,7 @@ export const StyledCartListItem = styled.li`
   margin: 1em auto;
   border-top: ${({ theme }) => theme.colors.brdrWht};
   .itemImgContainer {
-    grid-area: 1/1/3/4;
+    grid-area: 1/1/4/5;
     aspect-ratio: 8/5;
     box-shadow: ${({ theme }) => theme.colors.boxShdwRght};
     overflow: hidden;
