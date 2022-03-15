@@ -6,14 +6,16 @@ export const StyledCartListItem = styled.li`
   grid-template-columns: repeat(10, 1fr);
   grid-gap: 0.5em;
   width: 100%;
-  margin-top: 1em;
+  max-width: 30em;
+  margin: 1em auto;
   border-top: ${({ theme }) => theme.colors.brdrWht};
   .itemImgContainer {
-    grid-area: 1/1/4/5;
+    grid-area: 1/1/3/4;
     aspect-ratio: 8/5;
     box-shadow: ${({ theme }) => theme.colors.boxShdwRght};
     overflow: hidden;
     img {
+      height: auto;
       width: 100%;
     }
   }
