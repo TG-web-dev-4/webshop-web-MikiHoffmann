@@ -24,7 +24,7 @@ const CartListItem = ({ cartItem }) => {
   return (
     <StyledCartListItem>
       <span className="itemTitle">{cartItem.name}</span>
-      <span className="qtyDisplay">nr of items: {cartItem.qty}</span>
+      <span className="qtyDisplay">items: {cartItem.qty}</span>
       <div className="itemImgContainer">
         <img src={`images/productImg/${cartItem.img}`} alt={cartItem.name} />
       </div>

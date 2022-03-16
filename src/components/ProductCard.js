@@ -1,17 +1,17 @@
 import { StyledProductCard } from "../components/styledComponents/ProductCard.styled";
 import { StyledLinkButton } from "../components/styledComponents/LinkButton.styled";
-const ProductCard = ({ products }) => {
+const ProductCard = ({ product }) => {
   return (
     <StyledProductCard>
       <span className="itemTitle">
-        <h3>{products[1].name}</h3>
+        <h3>{product.name}</h3>
       </span>
-      <span className="itemPrice">{products[1].price} money</span>
+      <span className="itemPrice">{product.price} money</span>
       <img
-        src={`images/productImg/${products[1].img}`}
-        alt={products[1].name}
+        src={`images/productImg/${product.img}`}
+        alt={product.name}
       />
-      <span className="itemDescription">{products[1].description}</span>
+      <span className="itemDescription">{product.description}</span>
       <StyledLinkButton>link</StyledLinkButton>
     </StyledProductCard>
   );
